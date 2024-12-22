@@ -14,6 +14,14 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
+        generator: {
+          // Output the images into a specific 'images' folder inside the 'dist' directory
+          filename: "images/[name].[hash:8][ext][query]", // [query] handles any URL query parameters
+        },
+      },
+      {
+        test: /\.(html)$/i,
+        use: ["html-loader"],
       },
       {
         test: /\.(?:js|mjs|cjs)$/,
