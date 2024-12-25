@@ -1,0 +1,140 @@
+:root {
+  --img-and-container-border-radius: 10px;
+  --text-section-left-padding: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(14px, 1vw, 40px);
+}
+
+.profile-container {
+  background: linear-gradient(
+    -5deg,
+    transparent 0%,
+    transparent 40%,
+    #0891b2 40%
+  );
+  display: flex;
+  padding: 30px 35px;
+  align-items: center;
+}
+
+.text-section-images > img {
+  width: 30px;
+  height: auto;
+}
+
+.img-container {
+  position: relative;
+  width: 400px;
+  min-width: 240px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: var(--img-and-container-border-radius);
+}
+
+.img-container > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--img-and-container-border-radius);
+}
+
+.text-overlay {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 2em;
+}
+
+.text-section {
+  background-color: white;
+  height: 200px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0px 10px 10px 0px;
+  position: relative;
+}
+
+.text-section > h2 {
+  padding: 14px var(--text-section-left-padding);
+}
+
+.text-section > p {
+  padding: 0 var(--text-section-left-padding);
+}
+
+.text-section-images {
+  display: flex;
+  gap: 2px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 5px;
+  padding-right: 5px;
+}
+
+@media (max-width: 598px) {
+  .img-container {
+    min-width: 210px;
+  }
+
+  .text-section-images > img {
+    width: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+    .profile-container {
+    flex-direction: column;
+    }
+
+    .img-container {
+        width: 100%;
+        height: 40em;
+    }
+
+    .text-section {
+        border-radius: 0;
+    }
+
+    .img-container > img {
+        border-radius: 0%;
+        height: 100%;
+    }
+
+    .text-overlay {
+        white-space: wrap;
+        font-size: 6rem;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        bottom: 0;
+        left: 0;
+        transform: translateX(0);
+        padding-left: 20px;
+    }
+ 
+}
+
+@media (max-width: 419px) {
+  .text-overlay {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 317px) {
+    .text-section {
+        height: 250px;
+    }
+}
